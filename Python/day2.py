@@ -3,12 +3,9 @@ with open('day2.txt', "r") as file:
 
 score = 0
 score2 = 0
-for i in content:
-    try:
-        p1 = i[0]
-        p2 = i[2]
-    except:
-        continue
+for i in range(0,len(content)-1):
+    p1 = content[i][0]
+    p2 = content[i][2]
     if p1 == 'A':
         if p2 == 'X':
             score += 1 + 3
