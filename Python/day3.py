@@ -14,10 +14,9 @@ for i in content:
     string1 = i[0:partition]
     string2 = i[partition: len(i)]
     for j in string1:
-        for k in string2:
-            if j == k:
-                common_char = k
-                break
+        if j in string2:
+            common_char = j
+            break
     sum += charValue(common_char)    
 
 print(f"Part 1: {sum}")
@@ -29,12 +28,10 @@ for i in range(0, len(content), 3):
     string2 = content[i+1]
     string3 = content[i+2]
     for j in string1:
-        for k in string2:
-            if j == k:
-                for l in string3:
-                    if j == l:
-                        common_char = l
-                        break
+        if j in string2:
+            if j in string3:
+                common_char = j
+                break
     sum += charValue(common_char)
 
 print(f"Part 2 : {sum}")
