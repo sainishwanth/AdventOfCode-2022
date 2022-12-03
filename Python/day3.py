@@ -4,7 +4,7 @@ with open('day3.txt', 'r') as file:
 def charValue(char):
     if ord(char) >= 97 and ord(char) <= 122:  #Lowercase
         return ord(char)-96
-    elif ord(char) >= 65 and ord(char) <=90:  #Uppercase
+    elif ord(char) >= 65 and ord(char) <= 90:  #Uppercase
         return ord(char)-38
 
 sum = 0
@@ -13,14 +13,14 @@ for i in content:
     partition = int((len(i)) / 2)
     string1 = i[0:partition]
     string2 = i[partition: len(i)]
-    for k in string1:
-        for l in string2:
-            if k == l:
+    for j in string1:
+        for k in string2:
+            if j == k:
                 common_char = k
                 break
     sum += charValue(common_char)    
 
-print(sum)
+print(f"Part 1: {sum}")
 
 sum = 0
 
@@ -37,4 +37,4 @@ for i in range(0, len(content), 3):
                         break
     sum += charValue(common_char)
 
-print(sum)
+print(f"Part 2 : {sum}")
