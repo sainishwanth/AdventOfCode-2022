@@ -1,3 +1,4 @@
+# Advent of Code - Day 3
 with open('day3.txt', 'r') as file:
     content = file.read().splitlines()
 
@@ -15,7 +16,7 @@ for i in content:
     for j in string1:
         if j in string2:
             break
-    sum += charValue(j)    
+    sum += charValue(j)
 
 print(f"Part 1: {sum}")
 
@@ -24,9 +25,8 @@ sum = 0
 for i in range(0, len(content), 3):
     string1, string2, string3 = content[i], content[i+1], content[i+2]
     for j in string1:
-        if j in string2:
-            if j in string3:
-                break
+        if j in string2 and j in string3:
+            break
     sum += charValue(j)
 
 print(f"Part 2 : {sum}")
