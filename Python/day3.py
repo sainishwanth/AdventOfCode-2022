@@ -11,27 +11,22 @@ sum = 0
 
 for i in content:
     partition = int((len(i)) / 2)
-    string1 = i[0:partition]
-    string2 = i[partition: len(i)]
+    string1, string2 = i[0:partition], i[partition: len(i)]
     for j in string1:
         if j in string2:
-            common_char = j
             break
-    sum += charValue(common_char)    
+    sum += charValue(j)    
 
 print(f"Part 1: {sum}")
 
 sum = 0
 
 for i in range(0, len(content), 3):
-    string1 = content[i]
-    string2 = content[i+1]
-    string3 = content[i+2]
+    string1, string2, string3 = content[i], content[i+1], content[i+2]
     for j in string1:
         if j in string2:
             if j in string3:
-                common_char = j
                 break
-    sum += charValue(common_char)
+    sum += charValue(j)
 
 print(f"Part 2 : {sum}")
