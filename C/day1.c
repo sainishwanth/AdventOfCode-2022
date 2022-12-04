@@ -6,22 +6,18 @@ int main(){
 	char ch;
 
 	FILE_ptr = fopen("day1.txt", "r");
-	char * arr;
+	printf("File opened");
+	char arr[2500];
 	int i = 0;
-	while(ch != EOF){
-		ch = fgetc(FILE_ptr);
-		if(!strcmp(ch,"\n")){
-			arr[i] = ch;
-			i++;
-		}	
+	int c;
+	while((c = fgetc(FILE_ptr)) != EOF){
+		arr[i] = c;
+		i += 1;
 	}
-	arr[i] = '\0';
+	printf("Lines: %d\n", i+1);
+	for(i = 0; i < 10477 ; ++i){
+		printf("%c", arr[i]);
+	}
 	fclose(FILE_ptr);
-	char * ptr = &arr[0];
-
-	while(*ptr != '\0'){
-		printf("%c", *ptr);
-		ptr++;
-	}
 	return 0;
 }
