@@ -6,10 +6,9 @@ count = 0
 count2 = 0
 check = False
 for i in content:
-    str = i
     r1, r2 = i.split(",", 1)
     r11, r12 = (r1.split("-", 1))
-    r21, r22 = (r2.split("-", 2))
+    r21, r22 = (r2.split("-", 1))
     r11, r12 = int(r11), int(r12)
     r21, r22 = int(r21), int(r22)
     l1 = [j for j in range(r11,r12+1)]
@@ -29,8 +28,4 @@ for i in content:
         count += 1
         
 print(f"Part 1: {count}")
-print(f"Part 2: {count2}")
-
-   
-
-     
+print(f"Part 2: {count2}")     
