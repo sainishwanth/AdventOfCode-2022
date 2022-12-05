@@ -1,13 +1,8 @@
-r11 = 1
-r12 = 5
+with open('/Users/sainishwanth/Documents/College/Coding/AdventOfCode2022/Python/day5.txt', 'r') as file:
+    content = file.read().splitlines()
 
-r21 = 1
-r22 = 5
+print(int(content[0][17:19].strip()))
 
-l1 = [j for j in range(r11,r12+1)]
-l2 = [k for k in range(r21,r22+1)]
-print(l1)
-l1.extend(l2)
-s1 = set(l1)
-s2 = set(l1)
-print(len(s1))
+s1 = ['P', 'L', 'M', 'N', 'W', 'V', 'B', 'H']
+print(s1.pop())
+print(s1)
