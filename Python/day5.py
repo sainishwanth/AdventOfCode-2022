@@ -47,7 +47,6 @@ for i in content:
     to_ = int(i[17:19].strip())
     sfrom = stack_dict[from_]
     sto = stack_dict[to_]
-    lst =[]
     while n > 0:
         sto.insert(0, sfrom.pop(n-1))
         n -= 1
